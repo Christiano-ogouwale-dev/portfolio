@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { reactive, ref } from 'vue'
-import { profile, socials } from '../data/portfolio'
+import { profile, socials, whatsapp } from '../data/portfolio'
 import SectionTitle from './SectionTitle.vue'
 
 const form = reactive({ name: '', email: '', message: '', website: '' }) // "website" = piège anti-robot
@@ -27,7 +27,13 @@ async function submit() {
           service_id: emailjs.service,
           template_id: emailjs.template,
           user_id: emailjs.key,
-          template_params: { name: form.name, email: form.email, message: form.message },
+          template_params: {
+            name: form.name,
+            email: form.email,
+            message: form.message,
+            title: `Message de ${form.name}`, // compatibles avec le modèle EmailJS "Contact Us"
+            subject: `Nouveau message de ${form.name}`,
+          },
         }),
       })
       if (!res.ok) throw new Error("Envoi impossible pour le moment (" + (await res.text()) + ").")
@@ -55,7 +61,7 @@ const field = 'w-full rounded-xl border border-line bg-bg px-4 py-3 text-fg outl
 
 <template>
   <section id="contact" class="mx-auto max-w-6xl px-6 py-24">
-    <SectionTitle eyebrow="06. Contact" title="Travaillons ensemble" />
+    <SectionTitle eyebrow="07. Contact" title="Travaillons ensemble" />
     <div class="grid gap-10 lg:grid-cols-5">
       <div v-reveal class="space-y-5 lg:col-span-2">
         <p class="leading-relaxed">Un projet, une question ou besoin de support ? Écris-moi, je réponds rapidement.</p>
@@ -66,6 +72,10 @@ const field = 'w-full rounded-xl border border-line bg-bg px-4 py-3 text-fg outl
         <a :href="`tel:${profile.phone}`" class="flex items-center gap-4 rounded-2xl border border-line bg-surface p-4 transition hover:border-brand">
           <span class="grid h-11 w-11 place-items-center rounded-xl bg-brand/10 text-xl">📞</span>
           <span><span class="block text-xs">Téléphone</span><span class="font-medium text-fg">{{ profile.phone }}</span></span>
+        </a>
+        <a :href="whatsapp()" target="_blank" rel="noopener" class="flex items-center gap-4 rounded-2xl border border-line bg-surface p-4 transition hover:border-brand">
+          <span class="grid h-11 w-11 place-items-center rounded-xl bg-green-500/10 text-xl">💬</span>
+          <span><span class="block text-xs">WhatsApp</span><span class="font-medium text-fg">Discuter maintenant</span></span>
         </a>
         <div class="flex flex-wrap gap-3 pt-2">
           <a v-for="x in socials" :key="x.label" :href="x.url" target="_blank" rel="noopener"

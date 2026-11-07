@@ -24,6 +24,7 @@ const role = useTyper(profile.roles)
         <div v-reveal="500" class="mt-8 flex flex-wrap justify-center gap-4 md:justify-start">
           <a href="#projects" class="rounded-full bg-brand px-7 py-3 font-semibold text-white shadow-lg shadow-brand/30 transition hover:-translate-y-0.5 hover:bg-brand-strong">Voir mes projets</a>
           <a href="#contact" class="rounded-full border border-line bg-surface px-7 py-3 font-semibold text-fg transition hover:-translate-y-0.5 hover:border-brand">Me contacter</a>
+          <a :href="profile.cv" download="CV_OGOUWALE_Christiano.pdf" class="rounded-full border border-brand px-7 py-3 font-semibold text-brand transition hover:-translate-y-0.5 hover:bg-brand hover:text-white">Télécharger mon CV</a>
         </div>
       </div>
 
