@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OGOUWALE Christiano | Développeur Web</title>
+    <meta name="description" content="Portfolio de OGOUWALE Christiano, développeur web : sites vitrines, applications Vue.js et support." />
+    <meta name="theme-color" content="#0284c7" />
+    <meta property="og:title" content="OGOUWALE Christiano | Développeur Web" />
+    <meta property="og:description" content="Sites vitrines, applications Vue.js, maintenance et support." />
+    <meta property="og:type" content="website" />
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💻</text></svg>" />
+    <script>
+      (function () {
+        var t = localStorage.getItem('theme')
+        var dark = t ? t === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches
+        if (dark) document.documentElement.classList.add('dark')
+      })()
+    </script>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

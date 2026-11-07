@@ -1,0 +1,27 @@
+LANCEMENT (VS Code)
+1. Fichier > Ouvrir le dossier > portfolio-christiano
+2. Terminal, une commande à la fois :
+     npm install
+     npm run dev
+3. Ouvre http://localhost:5173/   (mode sombre/clair avec le bouton en haut)
+
+FORMULAIRE DE CONTACT (back-end Node.js)
+Le formulaire envoie un vrai email via le serveur dans /server.
+1. Copie ".env.example" en ".env" (même dossier)
+2. Dans .env, mets le "mot de passe d'application" Gmail
+   (compte Google > Sécurité > Validation en 2 étapes > Mots de passe des applications)
+3. Lance site + serveur ensemble :   npm run dev:all
+Sans configuration, le formulaire propose un bouton "email direct" de secours.
+
+PERSONNALISER : src/data/portfolio.ts
+(chiffres clés, services, compétences, projets, parcours, GitHub/LinkedIn).
+Les chiffres et le parcours sont des exemples : remplace-les par les tiens.
+
+PUBLIER
+ - Site + API ensemble (Render, Railway...) :  npm start
+ - Site seul (Netlify/Vercel) : npm run build, envoie "dist" (le formulaire
+   nécessite alors l'API hébergée à part).
+
+OPTION EmailJS (sans serveur, marche sur Netlify/Vercel)
+Remplis les 3 lignes VITE_EMAILJS_* dans ".env" puis relance "npm run dev".
+Si elles sont remplies, le formulaire utilise EmailJS ; sinon il utilise le serveur Node.
