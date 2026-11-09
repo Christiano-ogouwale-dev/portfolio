@@ -46,60 +46,32 @@ export const socials = [
 ].filter((x) => x.url)
 
 export const services = [
-  { icon: '🌐', title: 'Sites vitrines', text: 'Un site professionnel, rapide et adapté au mobile pour présenter votre activité.' },
-  { icon: '🛒', title: 'Boutiques e-commerce', text: 'Boutiques en ligne qui mettent vos produits en valeur et facilitent la vente.' },
-  { icon: '⚙️', title: 'Applications web', text: 'Interfaces et applications sur mesure adaptées à vos besoins.' },
-  { icon: '🎨', title: 'Graphisme & identité visuelle', text: 'Logo, supports de communication et design numérique cohérents.' },
-  { icon: '📱', title: 'Création de contenu', text: 'Visuels promotionnels et contenus pour vos réseaux sociaux.' },
-  { icon: '📊', title: 'Collecte & gestion de données', text: 'Collecte, organisation et traitement de vos données.' },
-  { icon: '🚁', title: 'Prises de vues par drone', text: 'Images aériennes pour des contenus visuels percutants.' },
+  { icon: 'globe', title: 'Sites vitrines', text: 'Un site professionnel, rapide et adapté au mobile pour présenter votre activité.' },
+  { icon: 'cart', title: 'Boutiques e-commerce', text: 'Boutiques en ligne qui mettent vos produits en valeur et facilitent la vente.' },
+  { icon: 'code', title: 'Applications web', text: 'Interfaces et applications sur mesure adaptées à vos besoins.' },
+  { icon: 'palette', title: 'Graphisme & identité visuelle', text: 'Logo, supports de communication et design numérique cohérents.' },
+  { icon: 'smartphone', title: 'Création de contenu', text: 'Visuels promotionnels et contenus pour vos réseaux sociaux.' },
+  { icon: 'database', title: 'Collecte & gestion de données', text: 'Collecte, organisation et traitement de vos données.' },
+  { icon: 'camera', title: 'Prises de vues par drone', text: 'Images aériennes pour des contenus visuels percutants.' },
 ]
 
 export const skills = [
-  { group: 'Front-end', items: ['HTML5', 'CSS3', 'JavaScript (DOM, animations)', 'Responsive design', 'Vue.js', 'Tailwind CSS'] },
-  { group: 'Back-end & données', items: ['PHP', 'MySQL', 'Collecte & traitement de données'] },
-  { group: 'Graphisme & contenu', items: ['Identité visuelle', 'Supports de communication', 'Création de contenu', 'Prises de vues par drone'] },
-  { group: 'Outils', items: ['VS Code', 'Git & GitHub', 'Live Server'] },
-]
-
-export const projects: {
-  title: string; category: string; image?: string; description: string; tech: string[]; demo: string; code: string
-}[] = [
-  {
-    title: 'Izzy Barbershop', category: 'Vitrine', image: izzyImg,
-    description: "Site vitrine d'un barbershop à Cotonou : prestations, galerie, réservation et paiement en ligne, bouton WhatsApp. Design sombre et doré.",
-    tech: ['Vue.js', 'Vite', 'CSS'], demo: '', code: '',
-  },
-  {
-    title: 'Gestionnaire de tâches', category: 'Application', image: taskImg,
-    description: "Ajout, modification et suppression de tâches, filtres, niveaux de priorité, mode sombre, sauvegarde locale (localStorage) et export.",
-    tech: ['HTML', 'CSS', 'JavaScript'], demo: '', code: '',
-  },
-  {
-    title: 'Page de profil', category: 'Portfolio', image: profilImg,
-    description: "Page de profil responsive : présentation, centres d'intérêt, liens utiles, emploi du temps et formulaire de contact.",
-    tech: ['HTML', 'CSS', 'JavaScript'], demo: '', code: '',
-  },
-  {
-    title: 'Boutique de sneakers', category: 'E-commerce', image: sneakersImg,
-    description: "Page produit e-commerce au design sombre : mise en avant du produit, prix, navigation par catégories et précommande.",
-    tech: ['HTML', 'CSS', 'JavaScript'], demo: '', code: '',
-  },
-  {
-    title: 'Boutique audio', category: 'E-commerce', image: audioImg,
-    description: "Page d'accueil de boutique en ligne : casques sans fil, articles en vedette, panier et contact WhatsApp.",
-    tech: ['HTML', 'CSS', 'JavaScript'], demo: '', code: '',
-  },
-  {
-    title: 'Landing page Wealthy', category: 'Vitrine', image: wealthyImg,
-    description: "Landing page immersive pour un service financier : hero illustré, avantages clés et sections animées.",
-    tech: ['HTML', 'CSS', 'JavaScript'], demo: '', code: '',
-  },
-  {
-    title: 'Page de connexion', category: 'Interface', image: loginImg,
-    description: "Interface de connexion et d'inscription avec panneau animé, connexion via réseaux sociaux et formulaire clair.",
-    tech: ['HTML', 'CSS', 'JavaScript'], demo: '', code: '',
-  },
+  { group: 'Front-end', items: [
+    { name: 'HTML5', level: 90 }, { name: 'CSS3', level: 85 },
+    { name: 'JavaScript (DOM, animations)', level: 75 }, { name: 'Responsive design', level: 85 },
+    { name: 'Vue.js', level: 65 }, { name: 'Tailwind CSS', level: 75 },
+  ] },
+  { group: 'Back-end & données', items: [
+    { name: 'PHP', level: 60 }, { name: 'MySQL', level: 60 },
+    { name: 'Collecte & traitement de données', level: 70 },
+  ] },
+  { group: 'Graphisme & contenu', items: [
+    { name: 'Identité visuelle', level: 70 }, { name: 'Supports de communication', level: 70 },
+    { name: 'Création de contenu', level: 80 }, { name: 'Prises de vues par drone', level: 65 },
+  ] },
+  { group: 'Outils', items: [
+    { name: 'VS Code', level: 90 }, { name: 'Git & GitHub', level: 70 }, { name: 'Live Server', level: 85 },
+  ] },
 ]
 
 export const experience = [
@@ -111,6 +83,65 @@ export const experience = [
 // Témoignages : ajoute de VRAIS avis de clients (la section s'affiche seulement s'il y en a)
 // Exemple : { name: 'Nom du client', role: 'Izzy Barbershop', text: 'Très satisfait du site...' }
 export const testimonials: { name: string; role: string; text: string }[] = []
+
+export const projects = [
+  {
+    title: 'IZZY',
+    category: 'Beauté & grooming',
+    description: 'Site vitrine premium pour une marque de soins capillaires et de beauté.',
+    image: izzyImg,
+    technologies: ['Vue.js', 'Tailwind CSS', 'Responsive Design'],
+    link: '#',
+  },
+  {
+    title: 'Task Manager',
+    category: 'Productivité',
+    description: 'Application de gestion de tâches avec interface moderne et sauvegarde locale.',
+    image: taskImg,
+    technologies: ['JavaScript', 'CSS3', 'Local Storage'],
+    link: '#',
+  },
+  {
+    title: 'Login UI',
+    category: 'Interface utilisateur',
+    description: 'Maquette de connexion élégante et fonctionnelle pour une expérience utilisateur fluide.',
+    image: loginImg,
+    technologies: ['HTML5', 'CSS3', 'UX Design'],
+    link: '#',
+  },
+  {
+    title: 'Wealthy',
+    category: 'Finance & gestion',
+    description: 'Dashboard de suivi financier pensé pour une lecture rapide des performances.',
+    image: wealthyImg,
+    technologies: ['JavaScript', 'Responsive Design', 'UI/UX'],
+    link: '#',
+  },
+  {
+    title: 'Sneakers',
+    category: 'E-commerce',
+    description: 'Boutique digitale centrée sur les produits et la conversion mobile.',
+    image: sneakersImg,
+    technologies: ['E-commerce', 'Design', 'Performance'],
+    link: '#',
+  },
+  {
+    title: 'Audio Studio',
+    category: 'Média & branding',
+    description: 'Landing page dédiée à une expérience audio premium et immersive.',
+    image: audioImg,
+    technologies: ['Branding', 'Motion', 'Web Design'],
+    link: '#',
+  },
+  {
+    title: 'Profil / Portfolio',
+    category: 'Portfolio personnel',
+    description: 'Portfolio personnel pensé pour mettre en valeur le profil, les services et les réalisations.',
+    image: profilImg,
+    technologies: ['Portfolio', 'Responsive', 'SEO'],
+    link: '#',
+  },
+]
 
 // Chiffres clés calculés à partir de tes vraies données
 export const stats = [
